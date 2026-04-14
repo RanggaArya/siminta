@@ -1,0 +1,15 @@
+<IfModule mime_module>
+    AddHandler application/x-httpd-alt-php82___lsphp .php
+</IfModule>
+
+# Tampilkan error (opsional, boleh hapus kalau sudah live)
+php_flag display_errors on
+php_value error_reporting 32767
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # Arahkan semua request ke folder public
+    RewriteCond %{REQUEST_URI} !^/public/
+    RewriteRule ^(.*)$ public/$1 [L]
+</IfModule>

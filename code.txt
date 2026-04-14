@@ -1,0 +1,8 @@
+run bersama
+php artisan schedule:work
+php artisan serve
+php artisan storage:link
+
+
+testing:
+php artisan peminjaman:reminder-h3
